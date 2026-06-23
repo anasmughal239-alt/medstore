@@ -89,18 +89,18 @@ export default function BillTab() {
     for (const item of parsedItems) {
       if (!item.name.trim() || !item.quantity) continue;
 
-      let { data: med } = await supabase
+      let { data: med } = (await supabase
         .from("medicines")
         .select("id")
         .ilike("name", item.name.trim())
-        .single();
+        .single()) as any;
 
       if (!med) {
-        const { data: newMed } = await supabase
+        const { data: newMed } = (await supabase
           .from("medicines")
           .insert({ name: item.name.trim(), pharma_company: pharmaCompany || null } as any)
           .select()
-          .single();
+          .single()) as any;
         med = newMed;
       }
 
@@ -112,11 +112,11 @@ export default function BillTab() {
         quantity_received: item.quantity,
       } as any);
 
-      const { data: inv } = await supabase
+      const { data: inv } = (await supabase
         .from("inventory")
         .select("id, quantity_current")
         .eq("medicine_id", med.id)
-        .single();
+        .single()) as any;
 
       if (inv) {
         await supabase.from("inventory").update({
