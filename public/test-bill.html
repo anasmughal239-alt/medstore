@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>GSK Delivery Bill</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 400px; margin: 40px auto; font-size: 13px; color: #000; }
+    h2 { text-align: center; margin: 0; font-size: 16px; }
+    .sub { text-align: center; font-size: 11px; color: #444; margin-bottom: 4px; }
+    .divider { border-top: 1px dashed #000; margin: 8px 0; }
+    .row { display: flex; justify-content: space-between; margin: 4px 0; }
+    .row.header { font-weight: bold; border-bottom: 1px solid #000; padding-bottom: 4px; margin-bottom: 6px; }
+    .footer { margin-top: 16px; font-size: 11px; color: #555; text-align: center; }
+    @media print { body { margin: 10px; } }
+  </style>
+</head>
+<body>
+
+  <h2>GlaxoSmithKline Pakistan Ltd.</h2>
+  <p class="sub">35-Dockyard Road, West Wharf, Karachi</p>
+  <p class="sub">Tel: 021-111-475-475</p>
+
+  <div class="divider"></div>
+
+  <div class="row"><span>Bill No:</span><span>GSK-2026-08841</span></div>
+  <div class="row"><span>Date:</span><span>23-Jun-2026</span></div>
+  <div class="row"><span>Rep Name:</span><span>Muhammad Imran</span></div>
+  <div class="row"><span>Store:</span><span>Al-Shifa Medical Store</span></div>
+
+  <div class="divider"></div>
+
+  <div class="row header">
+    <span style="flex:2">Medicine</span>
+    <span style="flex:1;text-align:center">Qty</span>
+    <span style="flex:1;text-align:right">Price</span>
+  </div>
+
+  <div class="row"><span style="flex:2">Panadol Extra</span><span style="flex:1;text-align:center">24</span><span style="flex:1;text-align:right">Rs. 480</span></div>
+  <div class="row"><span style="flex:2">Augmentin 625mg</span><span style="flex:1;text-align:center">12</span><span style="flex:1;text-align:right">Rs. 1440</span></div>
+  <div class="row"><span style="flex:2">Brufen 400mg</span><span style="flex:1;text-align:center">18</span><span style="flex:1;text-align:right">Rs. 720</span></div>
+  <div class="row"><span style="flex:2">Disprin</span><span style="flex:1;text-align:center">30</span><span style="flex:1;text-align:right">Rs. 300</span></div>
+  <div class="row"><span style="flex:2">Septran DS</span><span style="flex:1;text-align:center">10</span><span style="flex:1;text-align:right">Rs. 450</span></div>
+
+  <div class="divider"></div>
+
+  <div class="row"><span><strong>Total Items:</strong></span><span>5</span></div>
+  <div class="row"><span><strong>Total Amount:</strong></span><span><strong>Rs. 3,390</strong></span></div>
+
+  <div class="divider"></div>
+
+  <p class="footer">Received by: ___________________</p>
+  <p class="footer">Signature: ___________________</p>
+  <p class="footer" style="margin-top:12px">Thank you for your business!</p>
+
+</body>
+</html>
