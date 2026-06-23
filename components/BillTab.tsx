@@ -98,7 +98,7 @@ export default function BillTab() {
       if (!med) {
         const { data: newMed } = await supabase
           .from("medicines")
-          .insert({ name: item.name.trim(), pharma_company: pharmaCompany || null })
+          .insert({ name: item.name.trim(), pharma_company: pharmaCompany || null } as any)
           .select()
           .single();
         med = newMed;
