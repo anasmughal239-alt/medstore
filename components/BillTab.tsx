@@ -110,7 +110,7 @@ export default function BillTab() {
         bill_id: bill.id,
         medicine_id: med.id,
         quantity_received: item.quantity,
-      });
+      } as any);
 
       const { data: inv } = await supabase
         .from("inventory")
@@ -127,7 +127,7 @@ export default function BillTab() {
         await supabase.from("inventory").insert({
           medicine_id: med.id,
           quantity_current: item.quantity,
-        });
+        } as any);
       }
     }
 

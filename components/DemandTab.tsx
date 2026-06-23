@@ -85,7 +85,7 @@ export default function DemandTab() {
       showFeedback(`${medicine.name} is already in the demand list`, false);
       return;
     }
-    await supabase.from("demand_list").insert({ medicine_id: medicine.id, status: "pending" });
+    await supabase.from("demand_list").insert({ medicine_id: medicine.id, status: "pending" } as any);
     setSearch(""); setSearchResults([]);
     showFeedback(`✓ ${medicine.name} added to demand`, true);
     fetchDemand();
@@ -145,13 +145,13 @@ export default function DemandTab() {
         barcode: unknownBarcode.rawCode,
         unit: "box",
         threshold: 10,
-      })
+      } as any)
       .select()
       .single();
 
     if (!med) return;
 
-    await supabase.from("inventory").insert({ medicine_id: med.id, quantity_current: 0 });
+    await supabase.from("inventory").insert({ medicine_id: med.id, quantity_current: 0 } as any);
     await supabase.from("demand_list").insert({ medicine_id: med.id, status: "pending" });
 
     setUnknownBarcode(null);
