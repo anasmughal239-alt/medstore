@@ -74,7 +74,7 @@ export default function BillTab() {
     setLoading(true);
     setOcrProgress("Saving...");
 
-    const { data: bill } = await supabase
+    const { data: bill } = (await supabase
       .from("bills")
       .insert({
         pharma_company: pharmaCompany || null,
@@ -82,7 +82,7 @@ export default function BillTab() {
         bill_date: new Date().toISOString().split("T")[0],
       } as any)
       .select()
-      .single();
+      .single()) as any;
 
     if (!bill) { setLoading(false); setOcrProgress(""); return; }
 
