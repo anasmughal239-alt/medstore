@@ -206,7 +206,7 @@ export default function DemandTab() {
         <button onClick={() => setShowScanner(true)}
           className="flex items-center gap-1.5 px-4 py-2.5 bg-orange-500 text-white rounded-xl text-sm font-medium">
           <ScanLine size={18} />
-          Scan
+          Scan Code
         </button>
       </div>
 

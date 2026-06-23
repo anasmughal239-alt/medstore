@@ -58,7 +58,7 @@ export default function BarcodeScanner({ onScan, onClose }: Props) {
     <div className="fixed inset-0 bg-black/80 z-50 flex flex-col items-center justify-center p-4">
       <div className="bg-white rounded-2xl w-full max-w-sm overflow-hidden">
         <div className="flex items-center justify-between px-4 py-3 border-b">
-          <p className="font-semibold text-gray-800">Scan Barcode</p>
+          <p className="font-semibold text-gray-800">Scan QR / Barcode / Data Matrix</p>
           <button onClick={onClose} className="p-1 text-gray-500 hover:text-gray-800">
             <X size={20} />
           </button>
