@@ -80,7 +80,7 @@ export default function BillTab() {
         pharma_company: pharmaCompany || null,
         rep_name: repName || null,
         bill_date: new Date().toISOString().split("T")[0],
-      })
+      } as any)
       .select()
       .single();
 
