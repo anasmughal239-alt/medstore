@@ -28,14 +28,12 @@ export default function BarcodeScanner({ onScan, onClose }: Props) {
       try {
         await scanner.start(
           { facingMode: "environment" },
-          { fps: 10, qrbox: { width: 250, height: 150 } },
+          { fps: 15, qrbox: { width: 300, height: 200 }, disableFlip: false },
           (decodedText) => {
             console.log("Barcode scanned:", decodedText);
             onScan(decodedText);
           },
-          (errorMessage) => {
-            console.log("Scan error:", errorMessage);
-          }
+          () => {} // ignore errors
         );
         started = true;
         console.log("Scanner started successfully");
